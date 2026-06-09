@@ -1,20 +1,31 @@
 name: IPLock
 version: 1.0
-main: com.trongphu.iplock.Main
-api-version: '1.21'
-description: Player IP Whitelist - Only allow join from saved IP
+main: com.trongphu.iplock.IPLock
+description: "IP Account Limiter - Giới hạn 10 accounts/IP"
 authors:
   - trongphu
 
 commands:
   iplock:
-    description: IP-Lock admin commands
-    usage: /iplock <check|reset|list|reload>
-    permission: iplock.admin
+    description: "Quản lý IP Lock"
+    usage: "/iplock <info|list|reload> [player/ip]"
     aliases:
       - ipl
 
 permissions:
-  iplock.admin:
-    description: Admin permission for IPLock
+  iplock.info:
+    description: "Xem info IP của player"
     default: op
+  iplock.list:
+    description: "Liệt kê accounts trên IP"
+    default: op
+  iplock.reload:
+    description: "Reload config"
+    default: op
+  iplock.admin:
+    description: "Admin - Tất cả quyền"
+    default: op
+    children:
+      iplock.info: true
+      iplock.list: true
+      iplock.reload: true
