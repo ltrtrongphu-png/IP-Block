@@ -1,0 +1,15 @@
+name: IPLock
+version: 1.0
+main: com.trongphu.iplock.IPLock
+description: Player IP Whitelist - Only allow join from saved IP
+api-version: '1.21'
+
+commands:
+  iplock:
+    description: IP-Lock admin commands
+    usage: /iplock <check|reset|list|reload>
+    permission: iplock.admin
+
+permissions:
+  iplock.admin:
+    default: op
