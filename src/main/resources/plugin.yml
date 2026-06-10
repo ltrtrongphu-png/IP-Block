@@ -1,11 +1,10 @@
 name: IPLock
-version: 2.0
+version: 2.1
 main: com.trongphu.iplock.IPLock
 description: "🔒 IP Account Limiter - Giới hạn accounts trên một IP"
 authors:
   - trongphu
 api-version: "1.21"
-
 commands:
   iplock:
     description: "Quản lý IP Lock plugin"
@@ -13,7 +12,6 @@ commands:
     aliases:
       - ipl
       - ips
-
 permissions:
   iplock.admin:
     description: "Tất cả quyền IPLock"
@@ -27,35 +25,40 @@ permissions:
       iplock.stats: true
       iplock.clear: true
       iplock.reload: true
-  
+      iplock.resetip: true
+
   iplock.info:
     description: "Xem info IP của player"
     default: op
-  
+
   iplock.list:
     description: "Liệt kê accounts trên IP"
     default: op
-  
+
   iplock.kick:
     description: "Kick tất cả players từ IP"
     default: op
-  
+
   iplock.whitelist:
     description: "Quản lý whitelist IP"
     default: op
-  
+
   iplock.setlimit:
     description: "Đặt giới hạn riêng cho IP"
     default: op
-  
+
   iplock.stats:
     description: "Xem thống kê server"
     default: op
-  
+
   iplock.clear:
     description: "Xóa dữ liệu players/IPs"
     default: op
-  
+
   iplock.reload:
     description: "Reload config file"
+    default: op
+
+  iplock.resetip:
+    description: "Reset IP đã lưu của player"
     default: op
